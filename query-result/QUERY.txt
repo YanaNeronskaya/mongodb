@@ -1,0 +1,8 @@
+1. mongo localhost/frontcamp -eval "db.restaurants.find().forEach(function(doc){ printjson(doc) })" >> import-results.txt
+2. mongo localhost/frontcamp -eval "db.restaurants.count()" >> count-results.txt
+3. mongo localhost/frontcamp -eval "db.restaurants.find({ borough: 'Brooklyn' }).count()" >> brroklyn-results.txt
+4. mongo localhost/frontcamp -eval "db.restaurants.find({ borough: 'Queens', cuisine 'Chinese'}).count()" >> queen-results.txt
+5. mongo localhost/frontcamp -eval "db.restaurants.find({}, { _id:1 }).sort({ grade: -1 }).limit(1)" >> id-results.txt
+6. mongo localhost/frontcamp -eval "db.restaurants.updateMany({borough: "Manhattan"}, {$push: {grades: { grade: "A", score: 7, date: ISODate()}}})" >> add-grade-results.txt
+7. mongo localhost/frontcamp -eval "db.restaurants.find({"grades.8.score": {$lt: 7}}, {"name": 1, "_id": 0})" >> find-exept-id-results.txt
+8. mongo localhost/frontcamp -eval "db.restaurants.find({'cuisine': 'Seafood', 'grades': {$elemMatch: {'grade': 'B', $and: [{'date': {$gt: ISODate('2014-02-01')}}, {'date': {$lt: ISODate('2014-03-01')}}]}}}, {'borough': 1})" >> seafood-results.txt

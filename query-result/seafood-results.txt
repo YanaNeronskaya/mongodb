@@ -1,0 +1,6 @@
+MongoDB shell version v4.0.4
+connecting to: mongodb://localhost:27017/frontcamp
+Implicit session: session { "id" : UUID("610f58c3-faa6-4fb9-93b1-bca5ead763d0") }
+MongoDB server version: 4.0.4
+{ "_id" : ObjectId("5c0ce4465c6c95bfb88e3e0b"), "borough" : "Bronx" }
+{ "_id" : ObjectId("5c0ce4465c6c95bfb88e4085"), "borough" : "Manhattan" }
